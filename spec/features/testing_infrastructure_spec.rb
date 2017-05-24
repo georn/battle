@@ -14,9 +14,11 @@ feature 'Testing infrastructure' do
     expect(page).to have_content('vs')
   end
 
-  scenario 'Players can see each other\'s health' do
-    visit ('/play')
-    expect(page).to have_content('Player 1 Health: 100')
-    expect(page).to have_content('Player 2 Health: 100')
+  scenario 'Player 1 can see player\'s 2 health ' do
+    visit ('/')
+    fill_in('player1', with: 'Guillermo')
+    fill_in('player2', with: 'Rita')
+    click_button('Submit')
+    expect(page).to have_content 'Rita: 100'
   end
 end
