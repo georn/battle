@@ -5,20 +5,14 @@ feature 'Testing infrastructure' do
   end
 
   scenario 'Players can submit their names in a form' do
-    visit ('/')
-    fill_in('player1', with: 'Guillermo')
-    fill_in('player2', with: 'Rita')
-    click_button('Submit')
+    sign_in_and_play
     expect(page).to have_content('Guillermo')
     expect(page).to have_content('Rita')
     expect(page).to have_content('vs')
   end
 
   scenario 'Player 1 can see player\'s 2 health ' do
-    visit ('/')
-    fill_in('player1', with: 'Guillermo')
-    fill_in('player2', with: 'Rita')
-    click_button('Submit')
+    sign_in_and_play
     expect(page).to have_content 'Rita: 100'
   end
 end
