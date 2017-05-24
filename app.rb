@@ -12,7 +12,7 @@ class Battle < Sinatra::Base
     # @name2 = params[:name2]
     session[:player1] = params[:player1]
     session[:player2] = params[:player2]
-    redirect "/play"
+    redirect '/play'
   end
 
   get '/play' do
@@ -20,7 +20,17 @@ class Battle < Sinatra::Base
     @player2 = session[:player2]
     @player1_health ||= 100
     @player2_health ||= 100
+    # session[:player2_health] ||= 100
+    # @player2_health  = session[:player2_health]
     erb :play
+  end
+
+  get '/attack' do
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    erb :attack
+    # session[:player2_health] -= 20
+    # redirect '/play'
   end
 
   get '/battle' do
