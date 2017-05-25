@@ -8,4 +8,6 @@
   <h2> <%= @player2_name %>: <%= @player2_health %></h2>
 </div>
 
-<a href = '/attack'>Attack Player 2</a>
+<form method='get' action='/attack'>
+  <input type='submit' value='Attack Player 2'>
+</form>

@@ -19,19 +19,16 @@ class Battle < Sinatra::Base
   get '/play' do
     @player1_name = $player1.name
     @player2_name = $player2.name
-    @player1_health ||= 100
-    @player2_health ||= 100
-    # session[:player2_health] ||= 100
-    # @player2_health  = session[:player2_health]
+    @player1_health = $player1.hit_points
+    @player2_health = $player2.hit_points
     erb :play
   end
 
   get '/attack' do
-    @player1_name = $player1.name
-    @player2_name = $player2.name
+    @player1 = $player1
+    @player2 = $player2
+    @player1.attack(@player2)
     erb :attack
-    # session[:player2_health] -= 20
-    # redirect '/play'
   end
 
   get '/battle' do
