@@ -3,22 +3,4 @@ feature 'Testing infrastructure' do
     visit('/battle')
     expect(page).to have_content('Hello Battle')
   end
-
-  scenario 'Players can submit their names in a form' do
-    sign_in_and_play
-    expect(page).to have_content('Guillermo')
-    expect(page).to have_content('Rita')
-    expect(page).to have_content('vs')
-  end
-
-  scenario 'Player 1 can see player\'s 2 health ' do
-    sign_in_and_play
-    expect(page).to have_content 'Rita: 100'
-  end
-
-  scenario 'Player 1 can attack player 2' do
-    sign_in_and_play
-    click_link('Attack Player 2')
-    expect(page).to have_content('Guillermo attacked Rita')
-  end
 end

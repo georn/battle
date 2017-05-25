@@ -1,16 +1,11 @@
 
 <div>
-  <h1> <%= @player1 %> vs <%=@player2%> </h1>
+  <h1> <%= @player1_name%> vs. <%=@player2_name%> </h1>
 </div>
 
 <div>
-  <h2> <%= @player1 %>: <%= @player1_health %></h2>
-  <h2> <%= @player2 %>: <%= @player2_health %></h2>
+  <h2> <%= @player1_name %>: <%= @player1_health %></h2>
+  <h2> <%= @player2_name %>: <%= @player2_health %></h2>
 </div>
 
-<!-- <div>
-  <form action="/attack" method="post">
-  <button type='button' >Attack Player 2</button>
-</form>
-</div> -->
 <a href = '/attack'>Attack Player 2</a>
