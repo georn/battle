@@ -1,11 +1,11 @@
 
 <div>
-  <h1> <%= @player1_name%> vs. <%=@player2_name%> </h1>
+  <h1> <%= @game.player_1.name%> vs. <%= @game.player_2.name%> </h1>
 </div>
 
 <div>
-  <h2> <%= @player1_name %>: <%= @player1_health %></h2>
-  <h2> <%= @player2_name %>: <%= @player2_health %></h2>
+  <h2> <%= @game.player_1.name %>: <%= @game.player_1.hit_points %></h2>
+  <h2> <%= @game.player_2.name %>: <%= @game.player_2.hit_points %></h2>
 </div>
 
 <form method='get' action='/attack'>
