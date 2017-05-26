@@ -1,4 +1,4 @@
-<h1><%=@game.player_1.name%> attacked <%=@game.player_2.name%></h1>
+<h1><%= @game.turn.name == @game.player_1.name ? @game.player_2.name : @game.player_1.name %> attacked <%=@game.turn.name%></h1>
 <form method='get' action='/play'>
   <input type='submit' value='Ok'>
 </form>
