@@ -8,7 +8,7 @@ feature 'Attacking' do
 
   scenario 'Player\'s 2 hit points are reduced when attacked' do
     sign_in_and_play
-    click_button('Attack Player 2')
+    click_button('Attack')
     click_button('Ok')
     expect(page).not_to have_content('Enrique: 100')
     expect(page).to have_content('Enrique: 90')
