@@ -1,8 +1,8 @@
 feature 'Attacking' do
 
-  scenario 'attacking Player 2' do
+  scenario 'Confirming Player 1 attacked Player 2' do
     sign_in_and_play
-    click_button('Attack Player 2')
+    click_button('Attack')
     expect(page).to have_content('Guillermo attacked Enrique')
   end
 
@@ -16,9 +16,18 @@ feature 'Attacking' do
 
   scenario 'attacking Player 1' do
     sign_in_and_play
-    click_button('Attack Player 2')
+    click_button('Attack')
     click_button('Ok')
-    click_button('Attack Player 2')
+    click_button('Attack')
+    expect(page).to have_content('Enrique attacked Guillermo')
+  end
+
+  scenario 'Confirming Player 2 attacked Player 1' do
+    sign_in_and_play
+    click_button('Attack')
+    click_button('Ok')
+    click_button('Attack')
+    expect(page).to_not have_content('Guillermo attacked Enrique')
     expect(page).to have_content('Enrique attacked Guillermo')
   end
 
