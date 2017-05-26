@@ -1,3 +1,9 @@
+<% if @game.turn.hit_points == 0 %>
+<div>
+  <h1> <%= @game.turn.name %> lost</h1>
+</div>
+<% end %>
+
 <div>
   <h1> It's <%= @game.turn.name %>'s turn</h1>
 </div>
